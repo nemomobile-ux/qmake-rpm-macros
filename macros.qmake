@@ -2,28 +2,9 @@
 # QMake macros
 #
 
-%qmake \
-  export QT_SELECT=5; \\\
-  qmake-qt5 -makefile \\\
-  "QMAKE_CFLAGS_RELEASE=${CFLAGS:-%optflags}" \\\
-  "QMAKE_CFLAGS_DEBUG=${CFLAGS:-%optflags}" \\\
-  "QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS:-%optflags}" \\\
-  "QMAKE_CXXFLAGS_DEBUG=${CXXFLAGS:-%optflags}" \\\
-  QMAKE_STRIP=: \\\
-  PREFIX=%{_prefix}
+%qmake %qmake_qt5
 
-%qmake5 \
-  export QT_SELECT=5; \\\
-  qmake-qt5 -makefile \\\
-  "QMAKE_CFLAGS_RELEASE=${CFLAGS:-%optflags}" \\\
-  "QMAKE_CFLAGS_DEBUG=${CFLAGS:-%optflags}" \\\
-  "QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS:-%optflags}" \\\
-  "QMAKE_CXXFLAGS_DEBUG=${CXXFLAGS:-%optflags}" \\\
-  %if 0%{?qa_stage_devel:1} \
-  DEFINES+=QT_MESSAGELOGCONTEXT \\\
-  %endif \
-  QMAKE_STRIP=: \\\
-  PREFIX=%{_prefix}
+%qmake5 %qmake_qt5
 
 %qmake_install export QT_SELECT=5; make install INSTALL_ROOT=%{buildroot}
 
