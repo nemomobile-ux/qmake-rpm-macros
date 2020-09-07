@@ -2,9 +2,9 @@
 # QMake macros
 #
 
-%qmake %qmake_qt5
+%qmake %qmake_qt5 PREFIX=%{_prefix}
 
-%qmake5 %qmake_qt5
+%qmake5 %qmake_qt5 PREFIX=%{_prefix}
 
 %qmake_install export QT_SELECT=5; make install INSTALL_ROOT=%{buildroot}
 
