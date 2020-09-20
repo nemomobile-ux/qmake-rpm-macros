@@ -6,8 +6,6 @@ License:        GPLv3
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 
-Requires: qt5-qtbase-devel
-
 %description
 This package contains the unversioned Qmake RPM macros, that most
 implementations should rely on.
