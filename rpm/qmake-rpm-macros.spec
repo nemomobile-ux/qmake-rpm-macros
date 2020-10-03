@@ -18,6 +18,8 @@ implementations should rely on.
 %install
 mkdir -p %{buildroot}%{_rpmmacrodir}
 install -m 644 macros.qmake %{buildroot}%{_rpmmacrodir}
+install -m 644 macros.nemomobile %{buildroot}%{_rpmmacrodir}
 
 %files
 %{_rpmmacrodir}/macros.qmake
+%{_rpmmacrodir}/macros.nemomobile

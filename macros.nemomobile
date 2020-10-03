@@ -1,0 +1,25 @@
+#
+# Generic NemoMobile macros for compatibility with Mer
+#
+
+%autogen \
+  ./autogen.sh --build=%{_build} --host=%{_host} \\\
+	--target=%{_target_platform} \\\
+	--program-prefix=%{?_program_prefix} \\\
+	--prefix=%{_prefix} \\\
+	--exec-prefix=%{_exec_prefix} \\\
+	--bindir=%{_bindir} \\\
+	--sbindir=%{_sbindir} \\\
+	--sysconfdir=%{_sysconfdir} \\\
+	--datadir=%{_datadir} \\\
+	--includedir=%{_includedir} \\\
+	--libdir=%{_libdir} \\\
+	--libexecdir=%{_libexecdir} \\\
+	--localstatedir=%{_localstatedir} \\\
+	--sharedstatedir=%{_sharedstatedir} \\\
+	--mandir=%{_mandir} \\\
+	--infodir=%{_infodir}
+
+%reconfigure \
+  autoreconf -v --install --force || exit 1 \
+  %configure 
